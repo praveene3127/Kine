@@ -1,0 +1,227 @@
+.onboarding-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-bg-primary);
+}
+
+/* Progress Bar */
+.onboarding-progress {
+    padding: var(--space-4) var(--space-8);
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.progress-bar-container {
+    flex: 1;
+    height: 4px;
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: var(--color-accent-gradient);
+    border-radius: var(--radius-full);
+    transition: width var(--transition-slow);
+}
+
+.progress-text {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    white-space: nowrap;
+}
+
+/* Main Content */
+.onboarding-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-8);
+}
+
+.onboarding-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-10);
+    max-width: 600px;
+    width: 100%;
+    backdrop-filter: blur(20px);
+}
+
+.onboarding-header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+}
+
+.onboarding-header h1 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-2);
+}
+
+.onboarding-header p {
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+/* Steps */
+.onboarding-step h2 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-2);
+}
+
+.onboarding-step>p {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-6);
+}
+
+/* Option Cards */
+.option-group {
+    display: flex;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+}
+
+.option-group.vertical {
+    flex-direction: column;
+}
+
+.option-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    background: var(--color-bg-tertiary);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-align: center;
+}
+
+.option-card.horizontal {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+}
+
+.option-card input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.option-card:hover {
+    border-color: var(--color-accent-primary);
+}
+
+.option-card.selected {
+    border-color: var(--color-accent-primary);
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.option-card:focus-within {
+    outline: 2px solid var(--color-accent-primary);
+    outline-offset: 2px;
+}
+
+.option-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.option-label {
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+.option-desc {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+}
+
+/* Toggle Group */
+.toggle-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+}
+
+.toggle-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-4);
+    background: var(--color-bg-tertiary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.toggle-option:hover {
+    border-color: var(--color-accent-primary);
+}
+
+.toggle-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.toggle-label {
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+.toggle-desc {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+}
+
+/* Actions */
+.onboarding-actions {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: flex-end;
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-border);
+}
+
+.onboarding-actions .btn {
+    min-width: 140px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .onboarding-main {
+        padding: var(--space-4);
+        align-items: flex-start;
+    }
+
+    .onboarding-card {
+        padding: var(--space-6);
+    }
+
+    .option-group:not(.vertical) {
+        flex-direction: column;
+    }
+
+    .onboarding-actions {
+        flex-direction: column-reverse;
+    }
+
+    .onboarding-actions .btn {
+        width: 100%;
+    }
+}
